@@ -55,6 +55,6 @@ class HabitRepository(private val habitDao: HabitDao, private val executor: Exec
     }
 
     fun getRandomHabitByPriorityLevel(level: String): LiveData<Habit> {
-        throw NotImplementedError("Not yet implemented")
+        return habitDao.getRandomHabitByPriorityLevel(level)
     }
 }
