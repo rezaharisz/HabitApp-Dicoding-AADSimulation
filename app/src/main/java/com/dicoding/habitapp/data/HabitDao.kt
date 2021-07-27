@@ -7,6 +7,7 @@ import androidx.sqlite.db.SupportSQLiteQuery
 
 //TODO 2 : Define data access object (DAO)
 
+@Dao
 interface HabitDao {
 
     @RawQuery(observedEntities = [Habit::class])
