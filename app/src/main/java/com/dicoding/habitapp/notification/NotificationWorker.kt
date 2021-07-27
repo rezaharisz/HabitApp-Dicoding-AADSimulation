@@ -17,6 +17,9 @@ class NotificationWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, p
         val shouldNotify = prefManager.getBoolean(applicationContext.getString(R.string.pref_key_notify), false)
 
         //TODO 12 : If notification preference on, show notification with pending intent
+        if (shouldNotify){
+
+        }
 
         return Result.success()
     }
