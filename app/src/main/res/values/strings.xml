@@ -51,4 +51,7 @@
     <string name="start">Start</string>
     <string name="stop">Stop</string>
     <string name="open_count_down">Open Count Down</string>
+    <string name="title_example">Walking Every Morning</string>
+    <string name="start_time_example">06:30</string>
+    <string name="minutesnumber_example">45</string>
 </resources>

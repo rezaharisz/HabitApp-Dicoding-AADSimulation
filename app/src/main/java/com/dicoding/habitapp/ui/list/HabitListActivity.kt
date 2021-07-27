@@ -10,12 +10,13 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dicoding.habitapp.R
 import com.dicoding.habitapp.data.Habit
+import com.dicoding.habitapp.setting.SettingsActivity
 import com.dicoding.habitapp.ui.ViewModelFactory
 import com.dicoding.habitapp.ui.add.AddHabitActivity
+import com.dicoding.habitapp.ui.random.RandomHabitActivity
 import com.dicoding.habitapp.utils.Event
 import com.dicoding.habitapp.utils.HabitSortType
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -76,7 +77,24 @@ class HabitListActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return true
+        return when(item.itemId){
+            R.id.action_random -> {
+                val i = Intent(this, RandomHabitActivity::class.java)
+                startActivity(i)
+                true
+            }
+
+            R.id.action_filter -> {
+                showFilteringPopUpMenu()
+                true
+            }
+            R.id.action_settings -> {
+                val i = Intent(this, SettingsActivity::class.java)
+                startActivity(i)
+                true
+            }
+            else -> false
+        }
     }
 
     private fun showFilteringPopUpMenu() {
